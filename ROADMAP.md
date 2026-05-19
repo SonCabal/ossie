@@ -34,6 +34,9 @@ The current model lacks sufficient support for metrics at different grains, filt
 - [Inner join in relationships](https://github.com/open-semantic-interchange/OSI/discussions/11)
 - [Support for cross-dataset dimensions & single-dataset measures](https://github.com/open-semantic-interchange/OSI/discussions/27)
 - [Semantic Filters](https://github.com/open-semantic-interchange/OSI/discussions/5)
+- [BIG IDEA: add metrics trees / input-output relations between metrics](https://github.com/open-semantic-interchange/OSI/discussions/40)
+- [Primary Key vs Unique Keys redundancy](https://github.com/open-semantic-interchange/OSI/discussions/15)
+- [Clarifying the Semantic Intent of Primary Keys vs. Unique Constraints](https://github.com/open-semantic-interchange/OSI/discussions/119)
 
 **Roadmap Deliverables:**
 
@@ -60,9 +63,35 @@ Semantic models need to be discoverable, governable, and shareable across system
 - Standalone semantic service / registry
 - Discovery, versioning, and access control for OSI models
 
-**Related Issues & PRs:**
+**Related Issues:**
 
-- [PR #94 — Add Apache Polaris converter module](https://github.com/open-semantic-interchange/OSI/pull/94)
+- [Issue #107 — Proposal: Adopt ontology-query as an Ontology Access Layer tool](https://github.com/open-semantic-interchange/OSI/issues/107)
+
+---
+
+### Ontology & Semantic Interoperability
+
+**Goal:** Enable OSI to describe business concepts independently of physical data layout, supporting ontology-based semantic models and cross-model conceptual alignment.
+
+**Motivation:**
+Many semantic representations (e.g., Palantir, Goldman Sachs Legend) use ontologies to define meaning, and dimensional semantic models naturally layer on top of these. OSI currently solves structural interoperability — any tool can read and write semantic models in a common format — but it does not yet solve conceptual interoperability, where different models may describe the same business concept using different names or structures. An ontology layer would let organizations define canonical business concepts (Customer, Order, Product, etc.) independently of where the data lives and map physical semantic models back to shared definitions.
+
+**Key Discussions:**
+
+- [Proposal: Extend OSI spec to interchange with semantic models based on relational ontologies](https://github.com/open-semantic-interchange/OSI/discussions/22)
+- [Support for Ontologies](https://github.com/open-semantic-interchange/OSI/discussions/101)
+- [Shared Semantics OSI](https://github.com/open-semantic-interchange/OSI/discussions/108)
+- [Plans to support other data models than tabular data?](https://github.com/open-semantic-interchange/OSI/discussions/68)
+
+**Roadmap Deliverables:**
+
+- Ontology layer describing business concepts above the physical/logical semantic model
+- Schema mappings between ontology concepts and OSI datasets/fields
+- Support for relational ontologies and non-tabular data models
+- Shared semantic definitions enabling conceptual interoperability across models
+
+**Related Issues:**
+
 - [Issue #107 — Proposal: Adopt ontology-query as an Ontology Access Layer tool](https://github.com/open-semantic-interchange/OSI/issues/107)
 
 ---
@@ -85,13 +114,16 @@ Users want reusable semantic models independent of underlying tables or views.
 - [Add support for "Logical Datasets" (query-defined entities / view definitions)](https://github.com/open-semantic-interchange/OSI/discussions/49)
 - [Support one-to-many binding between a logical dataset and the physical table, view, or query](https://github.com/open-semantic-interchange/OSI/discussions/61)
 - [Structured Dataset Sources](https://github.com/open-semantic-interchange/OSI/discussions/23)
+- [Structured Dataset 'source' representation](https://github.com/open-semantic-interchange/OSI/discussions/109)
+- [Support for reusable datasets and relationships across semantic models](https://github.com/open-semantic-interchange/OSI/discussions/103)
 
 **Roadmap Deliverables:**
 
 - Mapping layer between logical and physical datasets
 - Reusable semantic definitions across environments
+- Reusable datasets and relationships shared across semantic models
 
-**Related Issues & PRs:**
+**Related Issues:**
 
 - [Issue #104 — First-class representation of file-backed datasets (e.g. Parquet)](https://github.com/open-semantic-interchange/OSI/issues/104)
 
@@ -113,7 +145,7 @@ Consumers (BI tools, AI systems, APIs) need a consistent way to query semantic m
 - Canonical handling of joins, aggregations, and filters
 - Test suite to validate conformance across implementations
 
-**Related Issues & PRs:**
+**Related Issues:**
 
 - [Issue #107 — Proposal: Adopt ontology-query as an Ontology Access Layer tool](https://github.com/open-semantic-interchange/OSI/issues/107)
 
@@ -139,10 +171,9 @@ There is tension between portability and practical execution requirements.
 - Clear boundaries between semantic definition and execution
 - Optional templating support
 
-**Related Issues & PRs:**
+**Related Issues:**
 
 - [Issue #52 — Only allow one dialect per OSI document](https://github.com/open-semantic-interchange/OSI/issues/52)
-- [PR #60 — POC for a switch to having a single dialect for the whole file](https://github.com/open-semantic-interchange/OSI/pull/60)
 
 ---
 
@@ -167,7 +198,7 @@ Inconsistent handling of hierarchies and time impacts usability and interoperabi
 - Standardized time semantics
 - Calendar abstractions
 
-**Related Issues & PRs:**
+**Related Issues:**
 
 - [Issue #84 — Support field datatype rather than is_time](https://github.com/open-semantic-interchange/OSI/issues/84)
 
@@ -193,10 +224,6 @@ There is growing demand for structured semantic context and grounded query gener
 - Verified or curated query definitions
 - Mechanisms for controlling AI exposure to semantic elements
 
-**Related Issues & PRs:**
-
-- [PR #81 — Add verified queries (draft)](https://github.com/open-semantic-interchange/OSI/pull/81)
-
 ---
 
 ### Governance, Identity, and Validation
@@ -220,7 +247,7 @@ Enterprise adoption requires consistent identifiers, validation, and governance 
 - Validation and conformance standards
 - Governance and certification frameworks
 
-**Related Issues & PRs:**
+**Related Issues:**
 
 - [Issue #102 — Add semantic versioning and Git releases for core-spec/osi-schema.json](https://github.com/open-semantic-interchange/OSI/issues/102)
 - [Issue #92 — Community Implementation: Trust Control Center — OSI-compatible governance & reconciliation platform](https://github.com/open-semantic-interchange/OSI/issues/92)
@@ -268,10 +295,6 @@ Several naming conventions in the current spec create confusion or clash with es
 - [Generalise description field](https://github.com/open-semantic-interchange/OSI/discussions/36)
 - [Introduce a concept for "Display name"](https://github.com/open-semantic-interchange/OSI/discussions/37)
 
-**Related Issues & PRs:**
-
-- [PR #91 — Change vendor_name from enum to free-form string](https://github.com/open-semantic-interchange/OSI/pull/91)
-
 ---
 
 ### Data Types and Field Semantics
@@ -291,12 +314,12 @@ Consuming systems (BI tools, AI agents, dashboards) frequently need to know whet
 - [Native support for units](https://github.com/open-semantic-interchange/OSI/discussions/42)
 - [Native support for currencies](https://github.com/open-semantic-interchange/OSI/discussions/43)
 - [Semantic Field Types: dimension_type, data_type, and pii_classification](https://github.com/open-semantic-interchange/OSI/discussions/55)
+- [Add portable field physical metadata to OSI](https://github.com/open-semantic-interchange/OSI/discussions/110)
 
-**Related Issues & PRs:**
+**Related Issues:**
 
 - [Issue #58 — New attribute: contain personal data](https://github.com/open-semantic-interchange/OSI/issues/58)
 - [Issue #59 — New attribute: confidential indicator](https://github.com/open-semantic-interchange/OSI/issues/59)
-- [PR #66 — Add personal data and confidentiality indicators](https://github.com/open-semantic-interchange/OSI/pull/66)
 
 ---
 
@@ -318,6 +341,8 @@ OSI standardizes structural and logical semantics well, but there is limited sup
 - [Expand custom_extensions to be more suitable for application-specific metadata](https://github.com/open-semantic-interchange/OSI/discussions/30)
 - [Sample values](https://github.com/open-semantic-interchange/OSI/discussions/7)
 - [Governance metadata hooks](https://github.com/open-semantic-interchange/OSI/discussions/13) *(also informs strategic governance work)*
+- [Optional "positive direction" on metrics](https://github.com/open-semantic-interchange/OSI/discussions/41)
+- [Add default_aggregation to Field](https://github.com/open-semantic-interchange/OSI/discussions/115)
 
 ---
 
@@ -366,6 +391,7 @@ Geospatial analytics, time-series modeling, and audience segmentation have uniqu
 - [Geospatial data support: spatial field types, spatial relationships, and geographic hierarchies](https://github.com/open-semantic-interchange/OSI/discussions/69)
 - [Date Spine models](https://github.com/open-semantic-interchange/OSI/discussions/47)
 - [Add Support for Audiences](https://github.com/open-semantic-interchange/OSI/discussions/51)
+- [Spatial dimension type: extending dimension with a spatial descriptor for geometry/geography and spatial index data](https://github.com/open-semantic-interchange/OSI/discussions/114)
 
 ---
 
@@ -386,12 +412,12 @@ Broad ecosystem adoption depends on practical tools that let teams validate thei
 - [JSON Schema (osi-schema.json)](core-spec/osi-schema.json) — schema for structural validation
 - [Validation Script (validate.py)](validation/validate.py) — validates OSI YAML against JSON Schema, unique names, references, and SQL syntax
 - [Snowflake Converter](converters/snowflake/) — OSI → Snowflake Cortex Analyst YAML converter
+- [GoodData Converter](converters/gooddata/) — bidirectional OSI ↔ GoodData LDM converter
+- [Salesforce Converter](converters/salesforce/) — OSI ↔ Salesforce converter
+- [Apache Polaris Converter](converters/polaris/) — OSI → Apache Polaris converter
 
-**Related Issues & PRs:**
+**Related Issues:**
 
-- [PR #97 — Add validation rules for names, relationship columns, extensions, and dialects](https://github.com/open-semantic-interchange/OSI/pull/97)
-- [PR #96 — Add GoodData support: MAQL dialect, vendor registration, and bidirectional LDM converter](https://github.com/open-semantic-interchange/OSI/pull/96)
-- [PR #94 — Add Apache Polaris converter module](https://github.com/open-semantic-interchange/OSI/pull/94)
-- [PR #93 — Add Apache Spark converter module](https://github.com/open-semantic-interchange/OSI/pull/93)
+- [Issue #121 — Create converter/common module (for Java binding)](https://github.com/open-semantic-interchange/OSI/issues/121)
 - [Issue #111 — Follow up on OSI ai_context and custom_extensions mapping in Snowflake YAML](https://github.com/open-semantic-interchange/OSI/issues/111)
 
