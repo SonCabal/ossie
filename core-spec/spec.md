@@ -1,6 +1,8 @@
 # OSI - Core Metadata Specification
 
-**Version:** 0.1.1
+> **DRAFT version** — in development, schema may change before 0.2.0 is released.
+
+**Version:** 0.2.0.dev0
 
 ## Goals
 
@@ -35,18 +37,7 @@ Supported SQL and expression language dialects for metrics and field definitions
 | `MDX` | Multi-Dimensional Expressions |
 | `TABLEAU` | Tableau calculations |
 | `DATABRICKS` | Databricks SQL |
-
-### Vendors
-
-Supported vendors for custom extensions and integrations.
-
-| Vendor | Description |
-|--------|-------------|
-| `COMMON` | Common/standard extensions |
-| `SNOWFLAKE` | Snowflake-specific attributes |
-| `SALESFORCE` | Salesforce/Tableau-specific attributes |
-| `DBT` | dbt-specific attributes |
-| `DATABRICKS` | Databricks-specific attributes |
+| `MAQL` | GoodData MAQL (Metric Analysis and Query Language) |
 
 ## Semantic Model
 
@@ -356,9 +347,25 @@ Custom extensions allow vendors to add platform-specific metadata without breaki
 
 ```yaml
 custom_extensions:
-  - vendor_name: string  # Must be from vendors enum
+  - vendor_name: string  # Free-form string identifying the vendor
     data: string         # JSON string containing vendor-specific data
 ```
+
+### Vendor Names
+
+The `vendor_name` field is a free-form string, allowing any vendor or organization to
+define custom extensions without requiring changes to the core specification.
+
+The following are well-known examples:
+
+| Vendor | Description |
+|--------|-------------|
+| `COMMON` | Common/standard extensions |
+| `SNOWFLAKE` | Snowflake-specific attributes |
+| `SALESFORCE` | Salesforce/Tableau-specific attributes |
+| `DBT` | dbt-specific attributes |
+| `DATABRICKS` | Databricks-specific attributes |
+| `GOODDATA` | GoodData-specific attributes |
 
 ### Examples
 
@@ -549,6 +556,7 @@ ai_context:
 
 ## Version History
 
+- **0.2.0.dev0** (Unreleased): In-development next minor release. Schema is mutable; do not depend on this version in production.
 - **0.1.1** (2025-12-11): Initial release
   - Core semantic model structure
   - Support for datasets, relationships, fields, and metrics

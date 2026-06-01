@@ -26,7 +26,7 @@ OSI addresses semantic fragmentation by providing:
 
 ### Specification at a Glance
 
-The OSI core specification (current version: **0.1.1**) defines a YAML-based format for describing semantic models. The key constructs are:
+The OSI core specification (current version: **0.2.0.dev0**, latest released: **0.1.1**) defines a YAML-based format for describing semantic models. The key constructs are:
 
 | Construct | Description |
 |-----------|-------------|
@@ -128,75 +128,7 @@ Changes to the OSI Specification follow a structured voting process:
 
 Working groups are focused teams that drive specific areas of the specification forward. Each working group has a designated lead and members drawn from across the participating organizations.
 
-#### 1. Metric Language and Relationships
-
-This group focuses on the expression language for defining metrics, including aggregation semantics, cross-dataset references, and the relationship model that connects datasets. Key areas include advanced metric types (ratios, cumulative metrics, derived metrics) and the rules governing how metrics traverse relationships.
-
-| Name | Affiliation |
-|------|-------------|
-| Will Pugh (lead) | |
-| Khushboo Bhatia | Snowflake |
-| LLyod Tabb | Malloy |
-| Dianne Wood | AtScale |
-| Lior Ebel | Salesforce |
-| Quigley Malcolm | dbt Labs |
-| Justin Talbot | Databricks |
-| Pavel Tiunov | Cube |
-| Damian Waldron | Thoughtspot |
-| Oliver Laslett | Lightdash |
-| Martin Traverso | Starburst |
-| Kurt | Relational AI |
-| JB Onofré | The ASF |
-
-#### 2. Composability
-
-This group explores how semantic models can be composed from smaller, reusable building blocks — enabling modular model definitions, model inheritance, and layered semantic models that build on top of each other.
-
-| Name | Affiliation |
-|------|-------------|
-| Dianne Wood (lead) | AtScale |
-| Kevin Wang | Snowflake |
-| LLyod Tabb | Malloy |
-| Quigley Malcolm | dbt Labs |
-| Kurt | Relational AI |
-| Antonio Scaramuzzino | Thoughtspot |
-| Martin Traverso | Starburst |
-
-#### 3. Catalog
-
-This group addresses how OSI semantic models integrate with data catalogs and metadata management platforms — including discovery, lineage, and the ability to register, search, and govern semantic models across an organization.
-
-| Name | Affiliation |
-|------|-------------|
-| Shubham Bhargav (lead) | Atlan |
-| Krzysztof | Colibra |
-| Khushboo Bhatia | Snowflake |
-| Akshat Shah | Thoughtspot |
-| Matt Fuller | Starbust |
-| JB Onofré | The ASF |
-
-#### 4. Ontology
-
-This group works on the formal ontological representation of semantic models — defining the conceptual framework and vocabulary for describing business entities, their properties, and the relationships between them at a higher level of abstraction.
-
-| Name | Affiliation |
-|------|-------------|
-| Kurt (lead) | Relational AI |
-| Krzysztof | Colibra |
-| Will Pugh | Snowflake |
-| Antonio Scaramuzzino | Thoughtspot |
-| Matt Fuller | Starbust |
-| JB Onofré | The ASF |
-
-#### 5. Sync API
-
-This group defines the API specification for synchronizing semantic models between platforms — enabling real-time or scheduled exchange of semantic model updates across tools in an automated fashion.
-
-| Name | Affiliation |
-|------|-------------|
-| Francois Lopitaux (Lead) | Thoughtspot |
-| Yogitha Chilukuri | Snowflake |
-| JB Onofré | The ASF |
+For the full list of working groups, leads, and members, see the [Working Groups page](working_groups.md).
 
 ### Community Meetings
 
@@ -206,6 +138,8 @@ Community meetings are open to all participants and provide a forum for discussi
 - **Working Group Meetings**: Each working group holds its own meetings to drive focused progress on their specific area of the specification.
 
 Meeting schedules, agendas, and notes are published on the [OSI website](https://open-semantic-interchange.org/) and the project's GitHub repository. All community members are welcome to attend and participate.
+
+**Google Calendar**: _link TBD_
 
 ---
 
@@ -385,7 +319,7 @@ A practical guide for organizations looking to adopt OSI.
 
 - **Website**: [open-semantic-interchange.org](https://open-semantic-interchange.org/)
 - **GitHub**: [github.com/open-semantic-interchange](https://github.com/open-semantic-interchange)
-- **Slack**: [join slack](https://join.slack.com/t/opensemanticx/shared_invite/zt-3pq1j0lid-tQBbEvAngAvz0I0vZm~HJw)
+- **Slack**: [join slack](https://join.slack.com/t/opensemanticx/shared_invite/zt-3yuad6c0h-MaoPgVSD1g9MEOf1_QeaiQ)
 - **Core Specification**: [core-spec/spec.md](../core-spec/spec.md)
 - **JSON Schema**: [core-spec/osi-schema.json](../core-spec/osi-schema.json)
 - **YAML Schema**: [core-spec/spec.yaml](../core-spec/spec.yaml)
@@ -413,7 +347,7 @@ We welcome contributions from everyone — whether you are a developer, a data e
 2. **Explore the Examples**: Review the [TPC-DS example](../examples/tpcds_semantic_model.yaml) to see a complete semantic model in practice.
 3. **Join the Conversation**: Open or participate in [GitHub Issues](https://github.com/open-semantic-interchange) and Discussions to share ideas and feedback.
 4. **Submit a Pull Request**: Fork the repository, make your changes, and submit a pull request. All contributions go through the standard review process described in the governance section above.
-5. **Join the Slack workspace**: You can chat directly with the community by [joining Slack](https://join.slack.com/t/opensemanticx/shared_invite/zt-3pq1j0lid-tQBbEvAngAvz0I0vZm~HJw).
+5. **Join the Slack workspace**: You can chat directly with the community by [joining Slack](https://join.slack.com/t/opensemanticx/shared_invite/zt-3yuad6c0h-MaoPgVSD1g9MEOf1_QeaiQ).
 
 ### Code of Conduct
 
