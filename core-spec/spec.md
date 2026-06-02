@@ -38,6 +38,7 @@ Supported SQL and expression language dialects for metrics and field definitions
 | `TABLEAU` | Tableau calculations |
 | `DATABRICKS` | Databricks SQL |
 | `MAQL` | GoodData MAQL (Metric Analysis and Query Language) |
+| `BIGQUERY` | Google BigQuery (GoogleSQL) |
 
 ## Semantic Model
 
@@ -278,6 +279,8 @@ expression:
         expression: LOWER(email)
       - dialect: SNOWFLAKE
         expression: LOWER(email)::VARCHAR
+      - dialect: BIGQUERY
+        expression: SAFE_CAST(LOWER(email) AS STRING)
   description: Normalized email address
 ```
 
